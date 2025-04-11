@@ -68,9 +68,9 @@ function showSlides(n) {
 // Typewriter effect for the hero section animated text
 const typeTexts = [
   "the Kotlin Lover ⚡",
-  "the Mobile Maniac 🧑🏽‍💻",
+  "the Mobile Maniac 👨🏽‍💻",
   "the ML guy 🤖",
-  "the Web Dev 🕷️🕸️",
+  "the Web Dev 🕷️",
   "the Prolific Poet 📝",
   "Ray Simbiri"
 ];
