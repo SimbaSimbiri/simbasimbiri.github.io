@@ -64,3 +64,51 @@ function showSlides(n) {
   }
   slides[slideIndex - 1].style.display = 'block';
 }
+
+// Typewriter effect for the hero section animated text
+const typeTexts = [
+  "the Kotlin Lover ⚡",
+  "the Mobile Maniac 🧑🏽‍💻",
+  "the ML guy 🤖",
+  "the Web Dev 🕷️🕸️",
+  "the Prolific Poet 📝",
+  "Ray Simbiri"
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.getElementById('typing');
+const typingSpeed = 40;    // Delay when typing characters (in milliseconds)
+const deletingSpeed = 50;  // Delay when deleting characters
+const pauseTime = 2000;     // Pause time after a word is fully typed
+
+function type() {
+  const currentText = typeTexts[textIndex];
+
+  if (isDeleting) {
+    typingElement.textContent = currentText.substring(0, charIndex--);
+    if (charIndex < 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % typeTexts.length;
+      setTimeout(type, 500); // Short pause before typing next word
+    } else {
+      setTimeout(type, deletingSpeed);
+    }
+  } else {
+    typingElement.textContent = currentText.substring(0, charIndex++);
+    if (charIndex > currentText.length) {
+      isDeleting = true;
+      setTimeout(type, pauseTime); // Pause before erasing
+    } else {
+      setTimeout(type, typingSpeed);
+    }
+  }
+}
+
+// Initialize the typewriter effect when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+  if (typingElement) {
+    type();
+  }
+});
