@@ -2,200 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ray Simbiri Portfolio</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-
   <style>
-    /* Reset and base styles */
-    * { 
-      margin: 0; 
-      padding: 0; 
+    :root {
+      --primary: #3a86ff;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --success: #4cc9f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    html {
-      scroll-behavior: smooth;
-    }
+
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
+      background-color: var(--light);
+      color: var(--dark);
       line-height: 1.6;
     }
 
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      z-index: 100;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 0.5rem;
-    }
-    nav ul li {
-      margin: 0 1rem;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      padding: 1rem;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #667eea;
-    }
-
-    /* Header Section */
-    header {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
-      padding: 4rem 2rem 6rem;
-      text-align: center;
-      margin-top: 60px; /* add space for the fixed nav */
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.25rem;
-    }
-
-    /* Section styling */
-    section {
-      padding: 4rem 2rem;
+    .container {
       max-width: 1200px;
-      margin: auto;
-    }
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    /* About Section */
-    .about p {
-      font-size: 1.125rem;
-      margin-bottom: 1rem;
-      text-align: center;
+    /* Header */
+    header {
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 30px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
     }
 
-    /* Skills Section */
-    .skills-container {
+    header.scrolled {
+      padding: 15px 0;
+      background-color: rgba(26, 26, 46, 0.95);
+    }
+
+    .header-content {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-    .skill-category {
-      flex: 1;
-      min-width: 250px;
-      background: #fff;
-      margin: 1rem;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-    .skill-category:hover {
-      transform: translateY(-5px);
-    }
-    .skill-category h3 {
-      margin-bottom: 1rem;
-      color: #667eea;
-    }
-    .skill-category ul {
-      list-style: none;
-    }
-    .skill-category ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* Projects Section */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .project-card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    }
-    .project-title {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .project-desc {
-      margin-bottom: 1rem;
-    }
-    .project-links a {
-      text-decoration: none;
-      color: #667eea;
-      font-weight: bold;
-      border: 1px solid #667eea;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background 0.3s, color 0.3s;
-    }
-    .project-links a:hover {
-      background: #667eea;
-      color: #fff;
-    }
-
-    /* Contact Section */
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .contact-item {
-      margin: 1rem;
-      display: flex;
+      justify-content: space-between;
       align-items: center;
     }
-    .contact-item a {
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav ul li a {
+      color: var(--light);
       text-decoration: none;
-      color: #667eea;
-      margin-left: 0.5rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #333;
-      color: #fff;
+    nav ul li a:hover {
+      color: var(--primary);
     }
 
-    /* Animations */
-    .fade-in {
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu {
+      display: none;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--dark);
+      color: var(--light);
+      padding-top: 80px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 1s forwards;
     }
-    .fade-in.delay-1 {
-      animation-delay: 0.3s;
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #b3b3b3;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s 0.2s forwards;
     }
-    .fade-in.delay-2 {
-      animation-delay: 0.6s;
+
+    .hero .btn {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s 0.4s forwards;
     }
-    .fade-in.delay-3 {
-      animation-delay: 0.9s;
-    }
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -203,161 +151,874 @@
       }
     }
 
-    /* Responsive adjustments */
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2563eb;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* About Section */
+    section {
+      padding: 100px 0;
+    }
+
+    .about {
+      background-color: var(--light);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background-color: var(--primary);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Slide container for About Me */
+    .about-img {
+      flex: 1;
+      min-width: 300px;
+      padding: 0 20px;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+    }
+
+    .mySlides {
+      display: none; /* Hide all slides by default */
+    }
+
+    .mySlides img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 8px 16px;
+      margin-top: -22px;
+      color: var(--dark);
+      font-weight: bold;
+      font-size: 18px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      transition: 0.6s ease;
+      user-select: none;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: #ddd;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      padding: 0 20px;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+    }
+
+    /* Skills Section */
+    .skills {
+      background-color: #f0f4f8;
+    }
+
+    .skills-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .skill-item {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .skill-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .skill-title {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    /* Projects Section */
+    .projects {
+      background-color: var(--light);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    /* Zoom entire card slightly on hover */
+    .project-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 200px;
+      background-color: #ddd;
+      overflow: hidden;
+      transition: height 0.3s ease-in-out;
+    }
+
+    /* Increase the container height on hover to reveal more */
+    .project-card:hover .project-img {
+      height: 300px;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      transform-origin: center;
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.2);
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .project-category {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .project-desc {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .project-links {
+      display: flex;
+    }
+
+    .project-links a {
+      margin-right: 15px;
+      color: var(--dark);
+      transition: color 0.3s ease;
+    }
+
+    .project-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: #f0f4f8;
+    }
+
+    .contact-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+      padding: 0 20px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      margin-bottom: 30px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      font-size: 1.2rem;
+    }
+    
+    /* Replace LinkedIn and GitHub icons in Contact with images */
+    .contact-icon img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      padding: 0 20px;
+    }
+
+    .contact-form form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .submit-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #2563eb;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 50px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-text {
+      flex: 1;
+      min-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .footer-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .footer-text p {
+      color: #b3b3b3;
+      margin-bottom: 20px;
+    }
+
+    /* Footer Social Links with handles */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255,255,255,0.1);
+      padding: 5px 10px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: var(--light);
+      transition: all 0.3s ease;
+    }
+
+    .social-links a img {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .social-links a span {
+      margin-left: 8px;
+      font-size: 0.9rem;
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .footer-links {
+      flex: 1;
+      min-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .footer-links h4 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+      color: #b3b3b3;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links ul li a:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #b3b3b3;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+
       nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--dark);
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
       }
+
+      nav ul.active {
+        left: 0;
+      }
+
       nav ul li {
-        margin: 0.5rem 0;
+        margin: 20px 0;
       }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2563eb;
+    }
+
+    /* Animation */
+    .reveal {
+      position: relative;
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 1s ease;
+    }
+
+    .reveal.active {
+      transform: translateY(0);
+      opacity: 1;
     }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Header Section -->
-  <header id="home" class="fade-in">
-    <h1>Ray Simbiri</h1>
-    <p>Computer Science Major | Machine Learning Enthusiast</p>
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">Ray<span>Simbiri</span></div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
   </header>
-
+  
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>Hi, I'm <span style="color: var(--primary)">Ray Simbiri</span></h1>
+      <p>A passionate developer focused on creating interactive and responsive digital products.</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+  
   <!-- About Section -->
-  <section id="about" class="about">
-    <h2 class="section-title fade-in delay-1">About Me</h2>
-    <div class="fade-in delay-2">
-      <p>I'm Ray Simbiri, a Computer Science major at the University of Chicago specializing in Machine Learning. I’m passionate about building clean, scalable, and user-centered digital products. From full-stack web development to Android applications and chatbots, I thrive at the intersection of code and creativity.</p>
-      <p>I’ve developed projects that integrate APIs, implement MVVM architecture, and utilize tools like Kotlin, React, Flask, and SQL databases. Whether I’m leading a passion project or contributing to a collaborative team, I bring curiosity, adaptability, and a strong work ethic to the table.</p>
-    </div>
-  </section>
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>About Me</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-img reveal">
+          <!-- Slideshow Container -->
+          <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="mySlides">
+              <img src="prof_headshot_2.jpg" alt="Ray Simbiri Professional">
+            </div>
+            <!-- Slide 2 -->
+            <div class="mySlides">
+              <img src="laptop_with_apples.jpg" alt="Laptop with apples on the side">
+            </div>
+            <!-- Slide 3 -->
+            <div class="mySlides">
+              <img src="photo_in_corridor.jpg" alt="Ray Simbiri in corridor">
+            </div>
+            <!-- Slide 4 -->
+            <div class="mySlides">
+              <img src="laptop_ml.jpg" alt="Ray studying ML on laptop"> 
+            </div>
+            <!-- Slide 5 -->
+            <div class="mySlides">
+              <img src="twins.jpg" alt="Ray and twin brother">
+            </div>
+            <!-- Next/Prev arrows -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <h3>Who am I?</h3>
+          <p>
+            I'm Ray Simbiri, a Computer Science major at the University of Chicago specializing in Machine Learning. 
+            I’m passionate about building clean, scalable, and user-centered digital products. 
+            From full-stack web development to Android applications and chatbots, I thrive at the intersection of code and creativity.
+          </p>
+          <p>
+            I’ve developed projects that integrate APIs, implement MVVM architecture, and utilize tools like Kotlin, React, Flask, and SQL databases. 
+            Whether I’m leading a passion project or contributing to a collaborative team, I bring curiosity, adaptability, and a strong work ethic to the table.
+          </p>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2 class="section-title fade-in delay-1">Skills</h2>
-    <div class="skills-container fade-in delay-2">
-      <div class="skill-category">
-        <h3>Mobile Development</h3>
-        <ul>
-          <li>Kotlin</li>
-          <li>Jetpack Compose</li>
-          <li>Android SDK</li>
-          <li>Room</li>
-          <li>MVVM</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>Web Development</h3>
-        <ul>
-          <li>React</li>
-          <li>HTML/CSS</li>
-          <li>Flask</li>
-          <li>Ruby</li>
-          <li>Django</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>Backend & Databases</h3>
-        <ul>
-          <li>Python</li>
-          <li>SQL</li>
-          <li>PostgreSQL</li>
-          <li>Firebase</li>
-          <li>SQLite</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>Tools &amp; Technologies</h3>
-        <ul>
-          <li>Git</li>
-          <li>GitHub</li>
-          <li>Docker</li>
-          <li>AsyncHttpLibrary</li>
-          <li>JUnit4</li>
-          <li>Redux</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>Design</h3>
-        <ul>
-          <li>Figma</li>
-          <li>Material Design</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2 class="section-title fade-in delay-1">Projects</h2>
-    <div class="projects-grid">
-      <!-- Equityjamii Startup App -->
-      <div class="project-card fade-in delay-2">
-        <h3 class="project-title">Equityjamii Startup App</h3>
-        <p class="project-desc">
-          Kotlin-based Android app integrating YouTube Data API and Room database. Used MVVM architecture to manage state and high-order functions to improve codebase readability by 30%.
-        </p>
-        <div class="project-links">
-          <a href="https://github.com/SimbaSimbiri/EquiJamii" target="_blank">Source Code</a>
+          <p>And oh, I also happen to a have a twin!</p>
+          <a href="#contact" class="btn">Contact Me</a>
         </div>
       </div>
-      <!-- GPT-3.5 WhatsApp Chatbot -->
-      <div class="project-card fade-in delay-3">
-        <h3 class="project-title">GPT-3.5 WhatsApp Chatbot</h3>
-        <p class="project-desc">
-          Python Flask chatbot integrated with WhatsApp and OpenAI’s API, allowing students in Burundi to translate English slides to Kirundi. Maintained conversation context and updated UI with API responses.
-        </p>
-      </div>
-      <!-- Nutrition Tracker App -->
-      <div class="project-card fade-in delay-3">
-        <h3 class="project-title">Nutrition Tracker App</h3>
-        <p class="project-desc">
-          Used Kotlin and AsyncHttpLibrary to query USDA FoodData API. Performed 500+ authenticated API calls and implemented UI tests with Espresso and JUnit4 for validation.
-        </p>
-      </div>
-      <!-- Future projects can be added here -->
     </div>
   </section>
-
+  
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>My Skills</h2>
+      </div>
+      <div class="skills-content">
+        <div class="skill-item reveal">
+          <div class="skill-icon">📱</div>
+          <h3 class="skill-title">Mobile Development</h3>
+          <p>Kotlin, Jetpack Compose, Android SDK, Room, MVVM</p>
+        </div>
+        <div class="skill-item reveal">
+          <div class="skill-icon">💻</div>
+          <h3 class="skill-title">Web Development</h3>
+          <p>React, HTML/CSS, Flask, Ruby, Django</p>
+        </div>
+        <div class="skill-item reveal">
+          <div class="skill-icon">🗄️</div>
+          <h3 class="skill-title">Backend &amp; Databases</h3>
+          <p>Python, SQL, PostgreSQL, Firebase, SQLite</p>
+        </div>
+        <div class="skill-item reveal">
+          <div class="skill-icon">🔧</div>
+          <h3 class="skill-title">Tools &amp; Technologies</h3>
+          <p>Git, GitHub, Docker, AsyncHttpLibrary, JUnit4, Redux</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>My Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1: Equityjamii Startup App -->
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="equityjamii_project_photo.jpg" alt="Equityjamii Startup App">
+          </div>
+          <div class="project-content">
+            <div class="project-category">Mobile App</div>
+            <h3 class="project-title">Equityjamii Startup App</h3>
+            <p class="project-desc">
+              Kotlin-based Android app integrating YouTube Data API and Room database. 
+              Used MVVM architecture to manage state and high-order functions to improve codebase readability by 30%.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/SimbaSimbiri/EquiJamii" class="project-link" target="_blank">Source Code</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2: Nutrition Tracker App -->
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="https://camo.githubusercontent.com/634ccf6a479bb92a79c5f1094926d0f5dd7bb77942616632dd1c0007d8e94100/68747470733a2f2f692e696d6775722e636f6d2f6c38697371726d2e676966" alt="Nutrition Tracker App">
+          </div>
+          <div class="project-content">
+            <div class="project-category">Mobile App</div>
+            <h3 class="project-title">Nutrition Tracker App</h3>
+            <p class="project-desc">
+              Used Kotlin and AsyncHttpLibrary to query USDA FoodData API. Performed 500+ authenticated API calls 
+              and implemented UI tests with Espresso and JUnit4 for validation.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/AND101-41/Wellness-Warden" class="project-link" target="_blank">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Contact Section -->
-  <section id="contact">
-    <h2 class="section-title fade-in delay-1">Contact</h2>
-    <div class="contact-info fade-in delay-2">
-      <div class="contact-item">
-        <strong>Name:</strong>&nbsp;Ray Simbiri
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Contact Me</h2>
       </div>
-      <div class="contact-item">
-        <strong>Email:</strong>&nbsp;<a href="mailto:simbiriisaacray@gmail.com">simbiriisaacray@gmail.com</a>
-      </div>
-      <div class="contact-item">
-        <strong>Location:</strong>&nbsp;Chicago, IL
-      </div>
-      <div class="contact-item">
-        <strong>LinkedIn:</strong>&nbsp;<a href="https://www.linkedin.com/in/simbiriisaacray" target="_blank">linkedin.com/in/simbiriisaacray</a>
-      </div>
-      <div class="contact-item">
-        <strong>GitHub:</strong>&nbsp;<a href="https://github.com/SimbaSimbiri" target="_blank">github.com/SimbaSimbiri</a>
+      <div class="contact-content">
+        <div class="contact-info reveal">
+          <h3>Let's Connect</h3>
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+          
+          <div class="contact-info-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>simbiriisaacray@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Location</h4>
+              <p>Chicago, IL</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <img src="linked_in_icon.webp" alt="LinkedIn" />
+            </div>
+            <div>
+              <h4>LinkedIn</h4>
+              <p><a href="https://www.linkedin.com/in/simbiriisaacray" target="_blank">linkedin.com/in/simbiriisaacray</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <img src="github.webp" alt="GitHub" />
+            </div>
+            <div>
+              <h4>GitHub</h4>
+              <p><a href="https://github.com/SimbaSimbiri" target="_blank">github.com/SimbaSimbiri</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form reveal">
+          <form action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-control" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
-
+  
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Ray Simbiri. All Rights Reserved.</p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <h3>Ray<span>Simbiri</span></h3>
+          <p>Thank you for visiting my portfolio website.
+            Have an awesome day!.</p>
+          <!-- Footer Social Links with handles -->
+          <div class="social-links">
+            
+            <a href="https://www.instagram.com/simbi_ray?igsh=MWN1dzN2YnJneWIzdg%3D%3D&utm_source=qr" target="_blank">
+              <img src="instagram_icon.webp" alt="Instagram" />
+            </a>
+            <a href="https://www.facebook.com/rayford.isco?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank">
+              <img src="facebook_icon.webp" alt="Facebook" />
+            </a>
+            <a href="https://x.com/raysimbiri?s=21" target="_blank">
+              <img src="X_icon.webp" alt="X" />
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Ray Simbiri. All Rights Reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- Optional JavaScript for additional interactivity -->
   <script>
-    // Future enhancements (e.g., dynamic project filtering or modal popups) can be added here.
+    // Mobile Menu Toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navMenu = document.querySelector('nav ul');
+    
+    mobileMenu.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    
+    // Scroll Animation
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      // Reveal Elements on Scroll
+      const reveals = document.querySelectorAll('.reveal');
+      
+      reveals.forEach(reveal => {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveal.getBoundingClientRect().top;
+        const revealPoint = 150;
+        
+        if (revealTop < windowHeight - revealPoint) {
+          reveal.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu after clicking a link
+        if (navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+        }
+      });
+    });
+
+    // Slideshow for About section
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName('mySlides');
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+      }
+      slides[slideIndex-1].style.display = 'block';
+    }
   </script>
 </body>
 </html>
