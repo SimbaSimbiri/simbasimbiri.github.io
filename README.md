@@ -1,1 +1,1 @@
-# simbasimbiri.github.io
+This is the portfolio page for Ray Simbiri, version 1.0
