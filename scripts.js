@@ -66,11 +66,9 @@ function showSlides(n) {
 
 // Typewriter effect for the hero section animated text
 const typeTexts = [
-  "the Kotlin Lover ⚡",
-  "the Mobile Maniac 👨🏽‍💻",
-  "the ML guy 🤖",
+  "the Kotlin Maniac 👨🏽‍💻",
+  "the ML Lover 🤖",
   "the Web Dev 🕷️",
-  "the Prolific Poet 📝",
   "Ray Simbiri"
 ];
 
@@ -78,9 +76,9 @@ let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 const typingElement = document.getElementById('typing');
-const typingSpeed = 40;
+const typingSpeed = 60;
 const deletingSpeed = 50;
-const pauseTime = 2000;
+const pauseTime = 1300;
 
 function type() {
   const currentText = typeTexts[textIndex];
