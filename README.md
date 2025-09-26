@@ -1,1 +1,1 @@
-This is the portfolio page for Ray Simbiri, version 1.0
+This is my portfolio page, version 1.0.1

@@ -43,7 +43,10 @@
     <div class="container hero-content">
 
       <h1>Hi there, meet <span id="typing" class="primary-text"></span><span class="cursor">|</span></h1>
-      <p>A passionate developer focused on creating interactive and responsive digital products.</p>
+      <p>
+        I build at the intersection of Machine Learning, Cloud Computing, App development, and Finance.
+      </p>
+      <p>I also aura farm.</p>
       <a href="#projects" class="btn">View My Work</a>
     </div>
   </section>
@@ -84,21 +87,27 @@
           </div>
         </div>
         <div class="about-text reveal">
-          <h3>Who am I?</h3>
+          <h3>Who is this handsome fella?</h3>
           <p>
-            I'm Ray Simbiri, a Computer Science major at the University of Chicago specializing in Machine Learning.
-            I’m passionate about building clean, scalable, and user-centered digital products.
-            From full-stack web development to Android applications and chatbots, I thrive at the intersection of code
-            and creativity.
-          </p>
-          <p>
-            I’ve developed projects that integrate APIs, implement MVVM architecture, and utilize tools like Kotlin,
-            React, Flask, and SQL databases.
-            Whether I’m leading a passion project or contributing to a collaborative team, I bring curiosity,
-            adaptability, and a strong work ethic to the table.
+            I'm a <strong>UChicago CS</strong> student specializing in <strong>ML</strong>.
+            I design cross-platform products with <strong>Kotlin</strong> and <strong>Compose Multiplatform</strong>, expose typed
+            APIs with <strong>Ktor</strong> on <strong>AWS</strong>,
+            and keep data fast and reliable using <strong>MongoDB Atlas</strong> in the cloud and <strong>Room/SQLDelight</strong>
+            locally.
           </p>
 
-          <p>And oh, I'm also a big fan of anything entrepreneurship and startups!</p>
+          <p>
+            I value <strong>continuous learning</strong>, <strong>clear communication</strong>, and building things that are
+            <strong>easy to maintain</strong>.
+            I use <strong>clean architecture</strong> and <strong>solid error handling</strong> to keep apps <strong>smooth and
+              reliable</strong> across platforms.
+          </p>
+          <p>
+            I bring a <strong>thoughtful, and collaborative</strong> style — and yes, the occasional joke to keep momentum high.
+          </p>
+          <p>
+            NB: I <strong>ship in parallel</strong> — I’ve got a twin.
+          </p>
           <a href="#contact" class="btn">Contact Me</a>
         </div>
       </div>
@@ -117,37 +126,44 @@
         <div class="skill-item reveal">
           <div class="skill-icon">📱</div>
           <h3 class="skill-title">Mobile Development</h3>
-          <p>Kotlin, Jetpack Compose, Android SDK, Room, MVVM</p>
+          <p>Kotlin, Compose Multiplatform (Android/iOS/Desktop/Web), MVVM, Koin DI, Room & SQLDelight</p>
         </div>
+
+        <div class="skill-item reveal">
+          <div class="skill-icon">☁️</div>
+          <h3 class="skill-title">Cloud & DevOps</h3>
+          <p>AWS Elastic Beanstalk, Route 53 (DNS), ACM (TLS), GitHub Actions (CI/CD)</p>
+        </div>
+
 
         <div class="skill-item reveal">
           <div class="skill-icon">🤖</div>
           <h3 class="skill-title">Machine Learning</h3>
-          <p>Scikit-learn, Pandas, NumPy</p>
+          <p>scikit-learn, NumPy, pandas</p>
         </div>
 
         <div class="skill-item reveal">
           <div class="skill-icon">🗄️</div>
           <h3 class="skill-title">Backend &amp; Databases</h3>
-          <p>Python, Ruby, SQL, PostgreSQL, Firebase, SQLite</p>
+          <p>Ktor, MongoDB Atlas, Firebase Firestore, PostgreSQL, SQLite (Room/SQLDelight)</p>
         </div>
 
         <div class="skill-item reveal">
           <div class="skill-icon">💻</div>
           <h3 class="skill-title">Web Development</h3>
-          <p>React.js, HTML/CSS, JavaScript, Bootstrap, Redux, Ruby</p>
+          <p>React, HTML/CSS, JavaScript</p>
         </div>
 
         <div class="skill-item reveal">
           <div class="skill-icon">🔧</div>
           <h3 class="skill-title">Tools &amp; Technologies</h3>
-          <p>Git, GitHub, Gradle, Android Studio, PostMan</p>
+          <p>Git, Gradle, Android Studio, Postman</p>
         </div>
 
         <div class="skill-item reveal">
           <div class="skill-icon">📈</div>
-          <h3 class="skill-title">Currently Learning</h3>
-          <p>AWS, Kotlin Multiplatform, Compose Multiplatform, Stock Trading</p>
+          <h3 class="skill-title">Currently Exploring</h3>
+          <p>AWS, Advanced Stock Trading</p>
         </div>
 
       </div>
@@ -163,17 +179,70 @@
         <h2>My Projects</h2>
       </div>
       <div class="projects-grid">
-        <!-- Project 1: Equityjamii Startup App -->
+
+        <!-- Project 1: MyQuiz — Ktor Backend -->
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/myquiz_backend.png" alt="MyQuiz Ktor Backend">
+          </div>
+          <div class="project-content">
+            <div class="project-category">AWS Beanstalk · MongoDB · Ktor</div>
+            <h3 class="project-title">MyQuiz — Ktor Backend</h3>
+            <p class="project-desc">
+              REST API for quiz content with typed routes and JSON DTOs; handles auth and data for the MyQuiz apps.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/SimbaSimbiri/myquiz" class="project-link" target="_blank">Source Code</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2: MyQuiz — Compose App -->
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/myquiz_compose.jpg" alt="MyQuiz Compose App">
+          </div>
+          <div class="project-content">
+            <div class="project-category">Koin DI · Compose</div>
+            <h3 class="project-title">MyQuiz — Compose App</h3>
+            <p class="project-desc">
+              Compose quiz client with clean MVVM architecture, offline Room db, and a clean results view.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/SimbaSimbiri/myquiz" class="project-link" target="_blank">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: SampleNews (KMP) -->
+        <div class="project-card reveal">
+          <div class="project-img">
+            <img src="images/samplenews_cover.png" alt="SampleNews Kotlin Multiplatform App">
+          </div>
+          <div class="project-content">
+            <div class="project-category">Kotlin Multiplatform · Compose Multiplatform</div>
+            <h3 class="project-title">SampleNews — Global Investment News</h3>
+            <p class="project-desc">
+                A multiplatform news reader with shared business logic, SQLDelight database, and thin UI shells.
+                Thumbnail above displays the app running as a desktop window.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/SimbaSimbiri/SampleNews" class="project-link" target="_blank">Source Code</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4: EquityJamii -->
         <div class="project-card reveal">
           <div class="project-img">
             <img src="images/equityjamii_project_photo.jpg" alt="Equityjamii Startup App">
           </div>
           <div class="project-content">
-            <div class="project-category">Mobile App</div>
-            <h3 class="project-title">Equityjamii Startup App</h3>
+            <div class="project-category">Android Views · Firebase Firestore</div>
+            <h3 class="project-title">EquityJamii — Socio-Professional Platform</h3>
             <p class="project-desc">
-              Kotlin-based Android app integrating YouTube Data API and Room database.
-              Used MVVM architecture to manage state and high-order functions to improve codebase readability by 30%.
+              Android prototype for a socio-professional community: clean Views UI, deep-link notifications, and Firestore-backed data
+              with a single-activity navigation flow.
             </p>
             <div class="project-links">
               <a href="https://github.com/SimbaSimbiri/EquiJamii" class="project-link" target="_blank">Source Code</a>
@@ -181,7 +250,7 @@
           </div>
         </div>
 
-        <!-- Project 2: Nutrition Tracker App -->
+        <!-- Project 5: Nutrition Tracker App 
         <div class="project-card reveal">
           <div class="project-img">
             <img
@@ -189,18 +258,19 @@
               alt="Nutrition Tracker App">
           </div>
           <div class="project-content">
-            <div class="project-category">Mobile App</div>
-            <h3 class="project-title">Nutrition Tracker App</h3>
+            <div class="project-category">Android · API</div>
+            <h3 class="project-title">Nutrition Tracker — FoodData API</h3>
             <p class="project-desc">
-              Used Kotlin and AsyncHttpLibrary to query USDA FoodData API. Performed 500+ authenticated API calls
-              and implemented UI tests with Espresso and JUnit4 for validation.
+              An app that queries the USDA FoodData API and uses CodePath's AsyncHttp Library for networking. Displays nutrition details
+               and calculates daily intake. My first collaborative work.
             </p>
             <div class="project-links">
-              <a href="https://github.com/AND101-41/Wellness-Warden" class="project-link" target="_blank">Source
-                Code</a>
+              <a href="https://github.com/AND101-41/Wellness-Warden" class="project-link" target="_blank">Source Code</a>
             </div>
           </div>
         </div>
+        -->
+
       </div>
     </div>
   </section>
