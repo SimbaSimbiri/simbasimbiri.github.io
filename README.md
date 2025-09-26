@@ -1,1 +1,1 @@
-This is my portfolio page, version 1.0.1
+This is my portfolio page, version 1.0.2. Added to AWS Route 53 record
