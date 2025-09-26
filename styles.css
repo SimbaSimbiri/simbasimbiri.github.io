@@ -317,6 +317,25 @@ section {
   font-size: 1.3rem;
   margin-bottom: 15px;
 }
+.skill-line {
+  margin-top: .25rem;
+  line-height: 1.5;
+}
+
+.skill-line a {
+  color: #000;
+  text-decoration: none;
+}
+
+.skill-line a:visited {
+  color: #6b7280;
+}
+
+.skill-line a:hover,
+.skill-line a:focus {
+  color: #000;
+  text-decoration: underline;
+}
 
 /* Projects Section */
 .projects {
