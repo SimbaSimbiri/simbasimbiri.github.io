@@ -805,3 +805,14 @@ footer {
     opacity: 0;
   }
 }
+
+@media (max-width: 768px) {
+  
+  .about-text h3 {
+    margin-top: 24px;
+  }
+
+  .about-img {
+    margin-bottom: 16px;
+  }
+}
